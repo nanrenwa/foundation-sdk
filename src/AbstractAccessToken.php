@@ -218,7 +218,8 @@ abstract class AbstractAccessToken
      */
     public function getHttp()
     {
-        return $this->http ?? $this->app->http;
+        return $this->http ?: $this->http = new Http();
+        // return $this->http ?? $this->app->http;
     }
 
     /**
